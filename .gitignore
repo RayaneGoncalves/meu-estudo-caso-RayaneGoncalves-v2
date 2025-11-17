@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Logs & Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Web Project (web/)
+web/dist/
+web/.vite/
+web/coverage/
+web/.vitest-cache/
+
+# Mobile Project (mobile/)
+mobile/.expo/
+mobile/.expo-gh-action-cache/
+mobile/android/local.properties
+mobile/ios/Podfile.lock
+mobile/ios/Pods/
+*.ipa
+*.apk
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/

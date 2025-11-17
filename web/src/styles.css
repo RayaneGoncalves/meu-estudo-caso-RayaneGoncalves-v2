@@ -1,3 +1,107 @@
-/* small helpers */
-.container { max-width:1100px; margin:0 auto; padding:20px; }
-.navbar-brand { color:'#d63384' !important; font-weight:700; }
+:root {
+  --accent: #E589A8;
+  --accent-dark: #D97395;
+  --background-light: #FEF8FA;
+  --card-bg: #FFFFFF;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+  --border-light: #FDF2F5;
+}
+
+body {
+  background-color: var(--background-light);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar-brand {
+  color: var(--accent) !important;
+  font-weight: 700;
+}
+
+h1[style*="var(--accent)"] {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-4 {
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.card-aluno {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-light);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-aluno.m-2 {
+  margin: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  flex: 1;
+}
+
+.card-aluno .p-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card-aluno:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.card-aluno h5 {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-aluno p {
+  flex-grow: 1;
+  font-size: 0.95rem;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-dark);
+  color: white;
+  transform: scale(1.03);
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}

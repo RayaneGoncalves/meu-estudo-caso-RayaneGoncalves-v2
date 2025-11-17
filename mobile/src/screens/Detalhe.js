@@ -1,21 +1,32 @@
 import React, {useEffect, useState} from 'react';
-import { View, Text } from 'react-native';
-import axios from 'axios';
+import { View, Text, ActivityIndicator } from 'react-native';
+import api from '../Api';
+import { globalStyles, colors } from '../styles';
 
 export default function Detalhe({route}) {
   const { id } = route.params;
   const [aluno, setAluno] = useState(null);
 
   useEffect(()=>{
-    axios.get('http://localhost:3001/alunos/'+id).then(r=>setAluno(r.data)).catch(()=>{});
+    api.get('/alunos/'+id)
+      .then(r=>setAluno(r.data))
+      .catch(()=>{});
   },[id]);
 
-  if(!aluno) return <View style={{flex:1,alignItems:'center',justifyContent:'center'}}><Text>Carregando...</Text></View>
+  if(!aluno) {
+    return (
+      <View style={globalStyles.loadingContainer}>
+        <ActivityIndicator size="large" color={colors.primary} />
+      </View>
+    );
+  }
 
   return (
-    <View style={{flex:1,alignItems:'center',justifyContent:'center', backgroundColor:'#ffd6e8'}}>
-      <Text style={{fontSize:22, color:'#cc2b75'}}>{aluno.nome}</Text>
-      <Text>ID: {aluno.id}</Text>
+    <View style={globalStyles.detalheContainer}>
+      <View style={globalStyles.detalheCard}>
+        <Text style={globalStyles.detalheName}>{aluno.nome}</Text>
+        <Text style={globalStyles.detalheId}>ID: {aluno.id}</Text>
+      </View>
     </View>
   );
 }
