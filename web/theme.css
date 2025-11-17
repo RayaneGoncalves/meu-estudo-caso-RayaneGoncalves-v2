@@ -1,0 +1,11 @@
+:root{
+  --bg:#ffe6f2;
+  --card:#ffd0e6;
+  --accent:#d63384;
+  --muted:#6b6b6b;
+}
+body{ background:var(--bg); font-family: Inter, Roboto, Arial, sans-serif; margin:0; color:#222; }
+.header{ background:transparent; padding:1rem;}
+.card-aluno{ background:var(--card); border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+a{ color:var(--accent); text-decoration:none; }
+.btn-accent{ background:var(--accent); border:none; color:white; }
